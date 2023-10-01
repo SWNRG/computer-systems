@@ -1,5 +1,9 @@
 # Εργαστήριο 1 - Εισαγωγή στο κέλυφος του Linux
 
+## Περιεχόμενα μαθήματος
+
+- [Εισαγωγή στο κέλυφος](#εισαγωγή-στο-κέλυφος)
+
 ## Εισαγωγή στο κέλυφος
 [![asciicast](https://asciinema.org/a/pg9qWpRzsFQmbA8WcZNfxTHLu.svg)](https://asciinema.org/a/pg9qWpRzsFQmbA8WcZNfxTHLu)
 

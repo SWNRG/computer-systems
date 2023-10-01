@@ -89,7 +89,7 @@ stud@vm2:~$ cat -n file1
 (η δεύτερη γραμμή του αρχείου είναι κενή).
 
 ## Το εγχειρίδιο των εντολών
-[![asciicast](https://asciinema.org/a/a6SbypLSvMp6eojZPKiBO96sY.svg)](https://asciinema.org/a/a6SbypLSvMp6eojZPKiBO96sY)
+[![asciicast](https://asciinema.org/a/lzqt4flgM8amQm58ZIWhtfW98.svg)](https://asciinema.org/a/lzqt4flgM8amQm58ZIWhtfW98)
 
 Μπορούμε να δούμε περισσότερες πληροφορίες για τη σύνταξη μιας εντολής, αξιοποιώντας την εντολή `man`. Η εντολή `man` εμφανίζει το εγχειρίδιο χρήσης μιας εντολής. Η σύνταξη της είναι `man όνομα_εντολής`. 
 
@@ -144,7 +144,6 @@ DESCRIPTION
               output version information and exit
 
 EXAMPLES
-
        cat f - g
               Output f's contents, then standard input, then g's contents.
 
@@ -222,6 +221,6 @@ stud@vm2:~$ cat --number file1
      1  αυτό είναι το περιεχόμενο του αρχείου 1.
      2
 ```
-Σημειώνουμε ότι στην περίπτωση πολλαπλών παραμέτερων που ορίζονται με τον πρώτο τρόπο (μονή παύλα και μονός χαρακτήρας), μπορούμε να εκφράσουμε όλες τις παραμέτρους με μια παύλα. 
+Σημειώνουμε ότι στην περίπτωση πολλαπλών παραμέτρων που ορίζονται με τον πρώτο τρόπο (μονή παύλα και μονός χαρακτήρας), μπορούμε να εκφράσουμε όλες τις παραμέτρους με μια παύλα. 
 
 Δηλαδή, οι εντολές `cat -n -E file1` και `cat -nE file1` είναι ισοδύναμες. 

@@ -6,8 +6,8 @@
 - [Διάλεξη 1 - Εισαγωγή στο κέλυφος του Linux](lab1)
 
 # Σχετικές πηγές:
-- [asciinemaze](https://github.com/prenex/asciinemaze) 
+- [asciinemaze](https://github.com/prenex/asciinemaze), δημιουργεί video τύπου  asciinema.
 - ΕΙΣΑΓΩΓΗ ΣΤΑ ΛΕΙΤΟΥΡΓΙΚΑ ΣΥΣΤΗΜΑΤΑ ΚΑΙ ΤΟ UNIX/LINUX, Σιδηρόπουλος Αντώνης, ISBN: 9786182210284, Κωδικός Βιβλίου στον Εύδοξο: 122077484. 
 
 # Επικοινωνία
-[Λευτέρης Μαμάτας](https://sites.google.com/site/emamatas/) από το Πανεπιστήμιο Μακεδονίας, Θεσσαλονίκη, Ελλάδα:
+[Λευτέρης Μαμάτας](https://sites.google.com/site/emamatas/), Πανεπιστήμιο Μακεδονίας, Θεσσαλονίκη, Ελλάδα.

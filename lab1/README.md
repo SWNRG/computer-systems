@@ -1,7 +1,6 @@
-# Συστήματα Υπολογιστών
 # Εργαστήριο 1 - Εισαγωγή στο κέλυφος του Linux
 
-# Εισαγωγή στο κέλυφος
+## Εισαγωγή στο κέλυφος
 [![asciicast](https://asciinema.org/a/pg9qWpRzsFQmbA8WcZNfxTHLu.svg)](https://asciinema.org/a/pg9qWpRzsFQmbA8WcZNfxTHLu)
 
 Καλωσορίσατε στο μάθημα των Συστημάτων Υπολογιστών. Θα δώσουμε ιδιαίτερη βαρύτητα στο λειτουργικό σύστημα Linux και την γραμμή εντολών.
@@ -37,13 +36,13 @@ file1  file2  file3
 Δηλαδή, ο προσωπικός μας κατάλογος εμπεριέχει τρια αρχεία:
 το file1, το file2 και το file3.
 
-# Βασική σύνταξη εντολών
+## Βασική σύνταξη εντολών
 [![asciicast](https://asciinema.org/a/w3PkdARp81zaZVvPQ6CFxkHdp.svg)](https://asciinema.org/a/w3PkdARp81zaZVvPQ6CFxkHdp)
 
 Η γενική σύνταξη μιας εντολής που αναγνωρίζει το κέλυφος είναι:
 `όνομα_εντολής ορίσματα`
 
-παράδειγμα:
+Παράδειγμα:
 ```console
 ls -a -l
 ```
@@ -89,5 +88,5 @@ stud@vm2:~$ cat -n file1
 ```
 (η δεύτερη γραμμή του αρχείου είναι κενή).
 
-# Το εγχειρίδιο των εντολών
+## Το εγχειρίδιο των εντολών
 [![asciicast](https://asciinema.org/a/a6SbypLSvMp6eojZPKiBO96sY.svg)](https://asciinema.org/a/a6SbypLSvMp6eojZPKiBO96sY)

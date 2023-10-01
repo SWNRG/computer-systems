@@ -90,3 +90,138 @@ stud@vm2:~$ cat -n file1
 
 ## Το εγχειρίδιο των εντολών
 [![asciicast](https://asciinema.org/a/a6SbypLSvMp6eojZPKiBO96sY.svg)](https://asciinema.org/a/a6SbypLSvMp6eojZPKiBO96sY)
+
+Μπορούμε να δούμε περισσότερες πληροφορίες για τη σύνταξη μιας εντολής, αξιοποιώντας την εντολή `man`. Η εντολή `man` εμφανίζει το εγχειρίδιο χρήσης μιας εντολής. Η σύνταξη της είναι `man όνομα_εντολής`. 
+
+Δηλαδή, για να εμφανίσουμε το εγχειρίδιο της εντολής `cat`:
+
+```console
+stud@vm2:~$ man cat
+
+CAT(1)                           User Commands                          CAT(1)
+
+NAME
+       cat - concatenate files and print on the standard output
+
+SYNOPSIS
+       cat [OPTION]... [FILE]...
+
+DESCRIPTION
+       Concatenate FILE(s) to standard output.
+
+       With no FILE, or when FILE is -, read standard input.
+
+       -A, --show-all
+              equivalent to -vET
+
+       -b, --number-nonblank
+              number nonempty output lines, overrides -n
+
+       -e     equivalent to -vE
+
+       -E, --show-ends
+              display $ at end of each line
+
+       -n, --number
+              number all output lines
+
+       -s, --squeeze-blank
+              suppress repeated empty output lines
+
+       -t     equivalent to -vT
+
+       -T, --show-tabs
+              display TAB characters as ^I
+
+       -u     (ignored)
+
+       -v, --show-nonprinting
+              use ^ and M- notation, except for LFD and TAB
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+EXAMPLES
+
+       cat f - g
+              Output f's contents, then standard input, then g's contents.
+
+       cat    Copy standard input to standard output.
+
+AUTHOR
+       Written by Torbjorn Granlund and Richard M. Stallman.
+
+REPORTING BUGS
+       GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+       Report cat translation bugs to <http://translationproject.org/team/>
+
+COPYRIGHT
+       Copyright  ©  2016  Free Software Foundation, Inc.  License GPLv3+: GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This is free software: you are free  to  change  and  redistribute  it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       tac(1)
+
+       Full documentation at: <http://www.gnu.org/software/coreutils/cat>
+       or available locally via: info '(coreutils) cat invocation'
+
+GNU coreutils 8.25               February 2017                          CAT(1)
+```
+
+Μπορούμε να δούμε όλες τις σελίδες της εντολής `man` με τη βοήθεια του πλήκτρου `space`. Η εντολή `man` τερματίζεται πληκτρολογώντας τον χαρακτήρα `q`.
+
+Τα συνηθισμένα τμήματα ενός εγχειριδίου χρήσης είναι τα:
+
+- NAME: όνομα και σύντομη περιγραφή της εντολής.
+- SYNOPSIS: η σύνταξη της εντολής.
+- DESCRIPTION: τα ορίσματα που μπορεί να δεχθεί η εντολή.
+- EXAMPLES: σύντομα παραδείγματα.
+- AUTHOR: οι δημιουργοί της εντολής.
+- COPYRIGHT: άδειες χρήσης.
+- SEE ALSO: επιπρόσθετες πηγές πληροφοριών για την εντολή.
+
+Ας δούμε τη σύνοψη της εντολής cat:
+
+`cat [OPTION]... [FILE]...`
+
+Τα ορίσματα σε ένα εγχειρίδιο της εντολής man έχουν την παρακάτω μορφή:
+
+- OPTION: στο σημείο αυτό τοποθετούμε όρισμα τύπου σημαίας.
+- []: δηλώνουν προαιρετικό όρισμα, δηλαδή η εντολή μπορεί να εκτελεστεί και με κανένα όρισμα.
+- ...: μπορούμε να δώσουμε πολλά ορίσματα του συγκεκριμένου τύπου.
+
+Δηλαδή, η εντολή `cat` δέχεται από κανένα μέχρι πολλά ορίσματα, όπως και από κανένα μέχρι πολλά αρχεία.
+
+Για παράδειγμα, η παρακάτω εντολή:
+
+``` console
+stud@vm2:~$ cat -n -E file1 file2
+     1	αυτό είναι το περιεχόμενο του αρχείου 1.$
+     2	$
+     3	αυτό είναι το περιεχόμενο του αρχείου 2.$
+     4	$
+```
+Χρησιμοποιεί 4 ορίσματα, δύο τύπου σημαίας και δύο ονόματα αρχείων.
+
+Παρατηρούμε στο εγχειρίδιο χρήσης ότι τα ορίσματα τύπου σημαίας μπορούν να εκφραστούν με 2 τρόπους. Με τη βοήθεια μιας παύλας και ένος χαρακτήρα ή διπλής παύλας και μιας ή πολλών λέξεων που χωρίζονται μεταξύ τους από μονές παύλες.
+
+Δηλαδή, οι παρακάτω εντολές είναι ισοδύναμες:
+
+```console
+stud@vm2:~$ cat -n file1
+     1	αυτό είναι το περιεχόμενο του αρχείου 1.
+     2
+```
+
+```console
+stud@vm2:~$ cat --number file1
+     1  αυτό είναι το περιεχόμενο του αρχείου 1.
+     2
+```
+Σημειώνουμε ότι στην περίπτωση πολλαπλών παραμέτερων που ορίζονται με τον πρώτο τρόπο (μονή παύλα και μονός χαρακτήρας), μπορούμε να εκφράσουμε όλες τις παραμέτρους με μια παύλα. 
+
+Δηλαδή, οι εντολές `cat -n -E file1` και `cat -nE file1` είναι ισοδύναμες. 

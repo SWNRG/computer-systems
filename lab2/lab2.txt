@@ -1,0 +1,172 @@
+±stud@vm2:~$ # Καλωσήρθατε στη δεύτερη διάλεξη του μαθήματος των
+±stud@vm2:~$ # Συστημάτων Υπολογιστών!
+±stud@vm2:~$ #
+±stud@vm2:~$ # Στη συνέχεια, θα συζητήσουμε τις βασικές εντολές του Linux
+±stud@vm2:~$ # για την περιήγηση στο σύστημα.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Όπως είδαμε στην πρώτη διάλεξη, η προτροπή της γραμμής
+±stud@vm2:~$ # εντολών δείχνει το σημείο που βρισκόμαστε στον σκληρό δίσκο.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Δηλαδή, βρίσκομαστε στον κατάλογο ~. Το συγκεκριμένο σύμβολο
+±stud@vm2:~$ # αναπαριστά τον προσωπικό μας κατάλογο.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Οι κατάλογοι του σκληρού δίσκου είναι οργανωμένοι σε δενδροειδή
+±stud@vm2:~$ # μορφή. Για να εμφανίσουμε το σημείο που βρισκόμαστε μέσα
+±stud@vm2:~$ # σε αυτό το "δέντρο" του σκληρού δίσκου, δίνουμε την εντολή pwd:
+±stud@vm2:~$ #
+±stud@vm2:~$ pwd
+§/home/stud
+±stud@vm2:~$ #
+±stud@vm2:~$ # Δηλαδή, στην περίπτωση μας το σύμβολο ~ αναπαριστά τον κατάλογο 
+±stud@vm2:~$ # /home/stud. Αυτό είναι το σημείο που μπορούμε να τοποθετήσουμε 
+±stud@vm2:~$ # τα προσωπικά μας αρχεία. 
+~
+±stud@vm2:~$ clear
+&
+±stud@vm2:~$ # Ας εκτελέσουμε τώρα την εντολή ls για να δούμε τα αρχεία μας:
+±stud@vm2:~$ #
+±stud@vm2:~$ ls
+§file1  file2  file3  myfiles
+±stud@vm2:~$ #
+±stud@vm2:~$ # Τo αρχείo myfiles είναι κατάλογος, ενώ τα αρχεία
+±stud@vm2:~$ # file1, file2 και file3 κανονικά άρχεια. Οι κατάλογοι είναι 
+±stud@vm2:~$ # σαν τους κίτρινους φακέλους στο γραφικό περιβάλλον των
+±stud@vm2:~$ # Windows. Σε κάποια συστήματα, τα αρχεία χρωματίζονται 
+±stud@vm2:~$ # διαφορετικά από τους καταλόγους.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Για να καταλάβουμε τον τύπο των αρχείων, μπορούμε να 
+±stud@vm2:~$ # δώσουμε την εντολή ls -l (αναλυτική εμφάνιση των αρχείων).
+±stud@vm2:~$ #
+±stud@vm2:~$ ls -l
+§total 20
+§-rw-r--r-- 1 ics24100 students24   74 Oct  3 10:40 file1
+§-rw-r--r-- 1 ics24100 students24   74 Oct  3 10:40 file2
+§-rw-r--r-- 1 ics24100 students24   74 Oct  3 10:40 file3
+§drwxrwxr-x 2 ics24100 students24 4096 Oct  7 16:36 myfiles
+±stud@vm2:~$ #
+±stud@vm2:~$ # Οι κατάλογοι διακρίνονται από τα αρχεία από τον πρώτο 
+±stud@vm2:~$ # χαρακτήρα που εμφανίζει η ls -l. Αν είναι d, το αρχείο
+±stud@vm2:~$ # είναι κατάλογος, αν είναι -, αποτελεί κανονικό αρχείο
+±stud@vm2:~$ # (κείμενο, φωτογραφία, κτλ). 
+±stud@vm2:~$ #
+±stud@vm2:~$ # Στο σημείο αυτό, μπορούμε να δώσουμε την εντολή cd
+±stud@vm2:~$ # (change directory) με την οποία μπορούμε να αλλάξουμε
+±stud@vm2:~$ # τον κατάλογο που βρισκόμαστε και να μετακινηθούμε σε 
+±stud@vm2:~$ # κάποιον άλλον κατάλογο. Ας μπούμε μέσα στον κατάλογο myfiles:
+±stud@vm2:~$ #
+±stud@vm2:~$ cd myfiles
+±stud@vm2:~/myfiles$ #
+±stud@vm2:~/myfiles$ # Μπορούμε να ξαναδώσουμε την εντολή pwd, ώστε να 
+±stud@vm2:~/myfiles$ # επαληθεύσουμε το σημείο που βρισκόμαστε στον σκληρό δίσκο:
+±stud@vm2:~/myfiles$ #
+±stud@vm2:~/myfiles$ pwd
+§/home/stud/myfiles
+±stud@vm2:~/myfiles$ #
+±stud@vm2:~/myfiles$ # Δηλαδή, η αρχή του σκληρού δίσκου συμβολίζεται με τον 
+±stud@vm2:~/myfiles$ # χαρακτήρα /. Σε εκείνο το σημείο υπάρχει ο κατάλογος 
+±stud@vm2:~/myfiles$ # home που περιλαμβάνει τους προσωπικούς καταλόγους όλων
+±stud@vm2:~/myfiles$ # των χρηστών. Μέσα στον home βρίσκεται ο κατάλογος stud 
+±stud@vm2:~/myfiles$ # (του τρέχοντα χρήστη), ο οποίος εμπεριέχει τον κατάλογο myfiles.
+±stud@vm2:~/myfiles$ #
+±stud@vm2:~/myfiles$ # Μια τέτοια πλήρη διαδρομή που ξεκινάει από την αρχή του
+±stud@vm2:~/myfiles$ # σκληρού δίσκου (την ρίζα / ή αλλιώς root directory),
+±stud@vm2:~/myfiles$ # λέγεται απόλυτη διαδρομή.
+±stud@vm2:~/myfiles$ #
+±stud@vm2:~/myfiles$ # Ας δούμε τώρα τα περιεχόμενα του καταλόγου myfiles, με
+±stud@vm2:~/myfiles$ # τη βοήθεια της ls:
+±stud@vm2:~/myfiles$ #
+±stud@vm2:~/myfiles$ ls -l
+§total 8
+§drwxrwxr-x 7 stud stud 4096 Oct  7 15:44 personal
+§drwxrwxr-x 5 stud stud 4096 Oct  7 15:44 studies
+±stud@vm2:~/myfiles$ #
+±stud@vm2:~/myfiles$ # Παρατηρούμε ότι εμπεριέχει δύο καταλόγους, τους personal
+±stud@vm2:~/myfiles$ # και studies.
+±stud@vm2:~/myfiles$ #
+±stud@vm2:~/myfiles$ # Ας μετακινηθούμε στον κατάλογο personal:
+±stud@vm2:~/myfiles$ #
+±stud@vm2:~/myfiles$ cd personal
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ # Εμφανίζουμε τα αρχεία του καταλόγου personal:
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ ls -l
+§total 20
+§drwxrwxr-x 2 stud stud 4096 Oct  7 14:02 books
+§drwxrwxr-x 2 stud stud 4096 Oct  7 15:48 finance
+§drwxrwxr-x 3 stud stud 4096 Oct  7 15:50 health
+§drwxrwxr-x 6 stud stud 4096 Oct  7 15:48 mails
+§drwxrwxr-x 4 stud stud 4096 Oct  7 15:52 photos
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ # Παρατηρούμε ότι ο κατάλογος personal εμπεριέχει τους 
+±stud@vm2:~/myfiles/personal$ # καταλόγους books, finance, health, mails και photos.
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ # Δηλαδή, μέχρι τώρα έχουμε ανακαλύψει την παρακάτω δομή
+±stud@vm2:~/myfiles/personal$ # του καταλόγου myfiles:
+±stud@vm2:~/myfiles/personal$ # ├── personal
+±stud@vm2:~/myfiles/personal$ # │   ├── books
+±stud@vm2:~/myfiles/personal$ # │   ├── finance
+±stud@vm2:~/myfiles/personal$ # │   ├── health
+±stud@vm2:~/myfiles/personal$ # │   ├── mails
+±stud@vm2:~/myfiles/personal$ # |── studies
+~
+~
+±stud@vm2:~/myfiles/personal$ clear
+& 
+±stud@vm2:~/myfiles/personal$ # Μπορούμε να συνεχίσουμε να ανακαλύπτουμε το σύστημα,
+±stud@vm2:~/myfiles/personal$ # πηγαίνοντας στον κατάλογο books και εμφανίζοντας τα
+±stud@vm2:~/myfiles/personal$ # αρχεία που περιέχει.
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ cd books
+±stud@vm2:~/myfiles/personal/books$ ls -l
+§total 20
+§-rw-rw-r-- 1 stud stud 4873 Oct  7 13:59 93-Victor_Hugo.txt
+§-rw-rw-r-- 1 stud stud  776 Oct  7 13:47 Crime_and_Punishment-Fyodor_Dostoevsky.txt
+§-rw-rw-r-- 1 stud stud 4425 Oct  7 14:02 The_Grapes_of_Wrath-John_Steinbeck.txt
+±stud@vm2:~/myfiles/personal/books$ #
+±stud@vm2:~/myfiles/personal/books$ # Δηλαδή, ο κατάλογος books περιλαμβάνει τρια αρχεία κειμένου.
+±stud@vm2:~/myfiles/personal/books$ # Eμφανίζουμε ένα από αυτά με τη βοήθεια της εντολής cat:
+±stud@vm2:~/myfiles/personal/books$ #
+±stud@vm2:~/myfiles/personal/books$ cat Crime_and_Punishment-Fyodor_Dostoevsky.txt 
+§Crime and Punishment follows the mental anguish and moral dilemmas of Rodion Raskolnikov, an impoverished ex-student in Saint Petersburg who plans to kill an unscrupulous pawnbroker, an old woman who stores money and valuable objects in her flat. He theorises that with the money he could liberate himself from poverty and go on to perform great deeds, and seeks to convince himself that certain crimes are justifiable if they are committed in order to remove obstacles to the higher goals of 'extraordinary' men. Once the deed is done, however, he finds himself wracked with confusion, paranoia, and disgust. His theoretical justifications lose all their power as he struggles with guilt and horror and is confronted with both internal and external consequences of his deed.
+±stud@vm2:~/myfiles/personal/books$ #
+±stud@vm2:~/myfiles/personal/books$ # Εδώ όμως δεν υπάρχει άλλος υποκατάλογος να ανακαλύψουμε, 
+±stud@vm2:~/myfiles/personal/books$ # για να γυρίσουμε στον πατρικό κατάλογο (τον personal, στην
+±stud@vm2:~/myfiles/personal/books$ # περίπτωση μας), δίνουμε την εντολή cd ..
+±stud@vm2:~/myfiles/personal/books$ #
+±stud@vm2:~/myfiles/personal/books$ cd ..
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ # Μπορούμε να εμφανίσουμε τα περιεχόμενα του καταλόγου personal,
+±stud@vm2:~/myfiles/personal$ # δίνοντας την εντολή ls -al. Η παράμετρος a ενεργοποιεί 
+±stud@vm2:~/myfiles/personal$ # στην ls τη δυνατήτα εμφάνισης κρυφών αρχείων. Τα κρυφά αρχεία
+±stud@vm2:~/myfiles/personal$ # στο Unix/Linux ξεκινάνε από τον χαρακτήρα .
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ ls -al
+§total 28
+§drwxrwxr-x 7 stud stud 4096 Oct  7 15:44 .
+§drwxrwxr-x 4 stud stud 4096 Oct  7 15:43 ..
+§drwxrwxr-x 2 stud stud 4096 Oct  7 14:02 books
+§drwxrwxr-x 2 stud stud 4096 Oct  7 15:48 finance
+§drwxrwxr-x 3 stud stud 4096 Oct  7 15:50 health
+§drwxrwxr-x 6 stud stud 4096 Oct  7 15:48 mails
+§drwxrwxr-x 4 stud stud 4096 Oct  7 15:52 photos
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ # Δηλαδή ο κατάλογος personal εμπεριέχει δύο κρυφά αρχεία,
+±stud@vm2:~/myfiles/personal$ # τα . και ..
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ # Στην πραγματικότητα, τα αρχεία αυτά υπάρχουν σε όλους τους
+±stud@vm2:~/myfiles/personal$ # καταλόγους. Το αρχείο .. συνδέει τον κατάλογο με τον πατρικό
+±stud@vm2:~/myfiles/personal$ # του κατάλογο, και αυτός είναι ο λόγος που η εντολή cd .. μας 
+±stud@vm2:~/myfiles/personal$ # μετακινεί έναν κατάλογο πάνω, στο δέντρο καταλόγων του σκληρού
+±stud@vm2:~/myfiles/personal$ # δίσκου. 
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ # Ο κατάλογος . συμβολίζει τον τρέχοντα κατάλογο, με
+±stud@vm2:~/myfiles/personal$ # αποτέλεσμα η εντολή cd . να μην αλλάζει το σημείο που βρισκόμαστε.
+±stud@vm2:~/myfiles/personal$ # Χρησιμοποιούμε τον κατάλογο . όποτε θέλουμε να αναφερθούμε 
+±stud@vm2:~/myfiles/personal$ # στον τρέχοντα κατάλογο.
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ # Ένας χρήστης μπορεί να δώσει την εντολή cd ~ ή cd χωρίς κανένα
+±stud@vm2:~/myfiles/personal$  όρισμα, για να μετακινηθεί στον προσωπικό του κατάλογο:
+±stud@vm2:~/myfiles/personal$ #
+±stud@vm2:~/myfiles/personal$ cd 
+±stud@vm2:~$ # 
+±stud@vm2:~$ # Ευχαριστούμε για την προσοχή σας. 

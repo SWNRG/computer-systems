@@ -5,7 +5,7 @@
 - [Περιήγηση στο σύστημα](#περιήγηση-στο-σύστημα)
 
 ## Περιήγηση στο σύστημα
-[![asciicast](https://asciinema.org/a/Evgu3fLaDxXvXZ0OhZh6jctlB.svg)](https://asciinema.org/a/Evgu3fLaDxXvXZ0OhZh6jctlB)
+[![asciicast](https://asciinema.org/a/l5SdmkMPuphjeEv6xoMHBPtT7.svg)](https://asciinema.org/a/l5SdmkMPuphjeEv6xoMHBPtT7)
 
 Καλωσήρθατε στη δεύτερη διάλεξη του μαθήματος των Συστημάτων Υπολογιστών!
 
@@ -99,13 +99,16 @@ drwxrwxr-x 4 stud stud 4096 Oct  7 15:52 photos
 Παρατηρούμε ότι ο κατάλογος personal εμπεριέχει τους καταλόγους books, finance, health, mails και photos.
 
 Δηλαδή, μέχρι τώρα έχουμε ανακαλύψει την παρακάτω δομή του καταλόγου myfiles:
+
+```
  ├── personal
  │   ├── books
  │   ├── finance
  │   ├── health
  │   ├── mails
  |── studies
- 
+```
+
 Μπορούμε να συνεχίσουμε να ανακαλύπτουμε το σύστημα, πηγαίνοντας στον κατάλογο books και εμφανίζοντας τα αρχεία που περιέχει.
 
 ```console

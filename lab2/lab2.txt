@@ -165,7 +165,7 @@
 ±stud@vm2:~/myfiles/personal$ # στον τρέχοντα κατάλογο.
 ±stud@vm2:~/myfiles/personal$ #
 ±stud@vm2:~/myfiles/personal$ # Ένας χρήστης μπορεί να δώσει την εντολή cd ~ ή cd χωρίς κανένα
-±stud@vm2:~/myfiles/personal$  όρισμα, για να μετακινηθεί στον προσωπικό του κατάλογο:
+±stud@vm2:~/myfiles/personal$ # όρισμα, για να μετακινηθεί στον προσωπικό του κατάλογο:
 ±stud@vm2:~/myfiles/personal$ #
 ±stud@vm2:~/myfiles/personal$ cd 
 ±stud@vm2:~$ # 

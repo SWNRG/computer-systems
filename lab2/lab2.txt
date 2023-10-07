@@ -28,8 +28,8 @@
 ±stud@vm2:~$ ls
 §file1  file2  file3  myfiles
 ±stud@vm2:~$ #
-±stud@vm2:~$ # Τo αρχείo myfiles είναι κατάλογος, ενώ τα αρχεία
-±stud@vm2:~$ # file1, file2 και file3 κανονικά άρχεια. Οι κατάλογοι είναι 
+±stud@vm2:~$ # Τo αρχείo myfiles είναι κατάλογος, ενώ τα file1,
+±stud@vm2:~$ # file2 και file3 είναι κανονικά άρχεια. Οι κατάλογοι είναι 
 ±stud@vm2:~$ # σαν τους κίτρινους φακέλους στο γραφικό περιβάλλον των
 ±stud@vm2:~$ # Windows. Σε κάποια συστήματα, τα αρχεία χρωματίζονται 
 ±stud@vm2:~$ # διαφορετικά από τους καταλόγους.
@@ -39,10 +39,10 @@
 ±stud@vm2:~$ #
 ±stud@vm2:~$ ls -l
 §total 20
-§-rw-r--r-- 1 ics24100 students24   74 Oct  3 10:40 file1
-§-rw-r--r-- 1 ics24100 students24   74 Oct  3 10:40 file2
-§-rw-r--r-- 1 ics24100 students24   74 Oct  3 10:40 file3
-§drwxrwxr-x 2 ics24100 students24 4096 Oct  7 16:36 myfiles
+§-rw-r--r-- 1 stud stud   74 Oct  3 10:40 file1
+§-rw-r--r-- 1 stud stud   74 Oct  3 10:40 file2
+§-rw-r--r-- 1 stud stud   74 Oct  3 10:40 file3
+§drwxrwxr-x 2 stud stud 4096 Oct  7 16:36 myfiles
 ±stud@vm2:~$ #
 ±stud@vm2:~$ # Οι κατάλογοι διακρίνονται από τα αρχεία από τον πρώτο 
 ±stud@vm2:~$ # χαρακτήρα που εμφανίζει η ls -l. Αν είναι d, το αρχείο

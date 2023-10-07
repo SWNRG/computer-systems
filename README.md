@@ -4,6 +4,7 @@
 
 Διαθέσιμα εργαστήρια:
 - [Διάλεξη 1 - Εισαγωγή στο κέλυφος του Linux](lab1)
+- [Διάλεξη 2 - Περιήγηση στο σύστημα](lab2)
 
 ## Σχετικές πηγές:
 - [asciinemaze](https://github.com/prenex/asciinemaze), δημιουργεί video τύπου  asciinema.

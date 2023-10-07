@@ -5,7 +5,7 @@
 - [Περιήγηση στο σύστημα](#περιήγηση-στο-σύστημα)
 
 ## Περιήγηση στο σύστημα
-[![asciicast](https://asciinema.org/a/8d12b3da-61bc-11ee-aee2-8e070b1ed45e.svg)](https://asciinema.org/a/8d12b3da-61bc-11ee-aee2-8e070b1ed45e)
+[![asciicast](https://asciinema.org/a/Evgu3fLaDxXvXZ0OhZh6jctlB.svg)](https://asciinema.org/a/Evgu3fLaDxXvXZ0OhZh6jctlB)
 
 Καλωσήρθατε στη δεύτερη διάλεξη του μαθήματος των Συστημάτων Υπολογιστών!
 

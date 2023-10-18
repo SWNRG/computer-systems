@@ -5,9 +5,9 @@
 - [Απόλυτες και σχετικές διαδρομές καταλόγων](#απόλυτες-και-σχετικές-διαδρομές-καταλόγων)
 
 ## Απόλυτες και σχετικές διαδρομές καταλόγων
-[![asciicast](https://asciinema.org/a/tLXhzq4JpU8lo5EbPHswiDv8v.svg)](https://asciinema.org/a/tLXhzq4JpU8lo5EbPHswiDv8v)
+[![asciicast](https://asciinema.org/a/EbyScXzgjqoZNRz92SOQdkWZJ.svg)](https://asciinema.org/a/EbyScXzgjqoZNRz92SOQdkWZJ)
 
-Σε αυτό το μάθημα, θα συζητήσομε για τις σχετικές και τις απόλυτες διαδρομές των καταλόγων του Linux.
+Σε αυτό το μάθημα, θα συζητήσουμε για τις σχετικές και τις απόλυτες διαδρομές των καταλόγων του Linux.
 
 Απόλυτη ονομάζεται μια διαδρομή καταλόγων που ξεκινάει από την ρίζα (root directory).
 

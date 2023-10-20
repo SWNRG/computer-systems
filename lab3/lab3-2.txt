@@ -1,0 +1,146 @@
+±stud@vm2:~$ # Σε αυτό το μάθημα, θα συνδυάσουμε τις σχετικές και τις απόλυτες 
+±stud@vm2:~$ # διαδρομές με εντολές δημιουργίας, διαγραφής και μετονομασίας 
+±stud@vm2:~$ # αρχείων και καταλόγων.
+±stud@vm2:~$ # 
+±stud@vm2:~$ # Συγκεκριμένα, θα μελετήσουμε τις παρακάτω εντολές που αφορούν 
+±stud@vm2:~$ # καταλόγους:
+±stud@vm2:~$ # 1) mkdir - δημιουργία καταλόγου,
+±stud@vm2:~$ # 2) rmdir - διαγραφή καταλόγου.
+±stud@vm2:~$ # 
+±stud@vm2:~$ # Όπως και τις παρακάτω εντολές που αφορούν κανονικά αρχεία:
+±stud@vm2:~$ # 1) cp - αντιγραφή αρχείων,
+±stud@vm2:~$ # 2) mv - μετακίνηση ή μετονομασία αρχείων,
+±stud@vm2:~$ # 3) rm - διαγραφή αρχείων.
+±stud@vm2:~$ # 
+±stud@vm2:~$ # Όλες οι εντολές του Linux που δέχονται σαν όρισμα αρχεία, 
+±stud@vm2:~$ # μπορούν να αναφερθούν σε αυτά τοποθετώντας μια απόλυτη ή σχετική
+±stud@vm2:~$ # διαδρομή πριν από το όνομα τους. Αυτό έχει σαν αποτέλεσμα να μην
+±stud@vm2:~$ # χρειάζεται να μετακινηθούμε στον κατάλογο που εμπεριέχει ένα 
+±stud@vm2:~$ # αρχείο, ώστε να αναφερθούμε σε αυτό.
+±stud@vm2:~$ # 
+±stud@vm2:~$ # Θα δοκιμάσουμε τις παραπάνω εντολές με ένα παράδειγμα. 
+±stud@vm2:~$ # Μετακινηθείτε στον κατάλογο personal ο οποίος βρίσκεται μέσα 
+±stud@vm2:~$ # στον κατάλογο myfiles, χρησιμοποιώντας μια απόλυτη διαδρομή 
+±stud@vm2:~$ # και στη συνέχεια εμφανίστε τη δομή καταλόγων με την 
+±stud@vm2:~$ # εντολή tree.
+±stud@vm2:~$ # 
+±stud@vm2:~$ cd myfiles/studies/
+±stud@vm2:~/myfiles/studies$ tree
+§.
+§├── labs
+§│   ├── lab1
+§│   │   └── lab_report.txt
+§│   └── lab2
+§│       └── lab_report.txt
+§├── lectures
+§│   ├── lecture1
+§│   │   └── lecture_notes.txt
+§│   └── lecture2
+§│       ├── assignments
+§│       │   ├── assignment1.txt
+§│       │   └── assignment2.txt
+§│       └── lecture_notes.txt
+§├── manuals
+§│   ├── man-cat.txt
+§│   └── man-ls.txt
+§└── misc
+§    ├── program1.c
+§    ├── program2.c
+§    ├── song1.mp3
+§    └── song2.mp3
+§
+§9 directories, 12 files
+±stud@vm2:~/myfiles/studies$ # 
+±stud@vm2:~/myfiles/studies$ # Παρατηρούμε ότι ο κατάλογος misc θα μπορούσε να 
+±stud@vm2:~/myfiles/studies$ # αναδιοργανωθεί στους καταλόγους music 
+±stud@vm2:~/myfiles/studies$ # και programs.
+±stud@vm2:~/myfiles/studies$ # 
+§├── music
+§│   ├── song1.mp3
+§│   └── song2.mp3
+§└── programs
+§    ├── program1.c
+§    └── program2.c
+§
+§10 directories, 12 files
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Αρχικά, θα πρέπει να δημιουργήσουμε δύο κενούς 
+±stud@vm2:~/myfiles/studies$ # καταλόγους, τους music και programs 
+±stud@vm2:~/myfiles/studies$ # χρησιμοποιώντας την εντολή mkdir.
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ mkdir music
+±stud@vm2:~/myfiles/studies$ mkdir programs
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Σημειώνουμε ότι ή εντολή mkdir μπορεί να δεχτεί 
+±stud@vm2:~/myfiles/studies$ # πολλαπλά ορίσματα αρχείων:
+±stud@vm2:~/myfiles/studies$ mkdir music programs
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Στη συνέχεια, θα πρέπει να μεταφέρουμε τα αρχεία
+±stud@vm2:~/myfiles/studies$ # program1.c και program2.c στον κατάλογο programs,
+±stud@vm2:~/myfiles/studies$ # όπως και τα αρχεία song1.mp3 και song2.mp3 στον 
+±stud@vm2:~/myfiles/studies$ # κατάλογο music.
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Η μεταφορά των αρχείων μπορεί να γίνει με τις 
+±stud@vm2:~/myfiles/studies$ # εντολές cp και mv (αντιγραφή και διαγραφή 
+±stud@vm2:~/myfiles/studies$ # αρχείου). Η cp μπορεί να εκτελεστεί με 
+±stud@vm2:~/myfiles/studies$ # διαφορετικούς τρόπους - ανάλογα με τη θέση που 
+±stud@vm2:~/myfiles/studies$ # βρισκόμαστε, αρκεί να οριστούν σωστά οι σχετικές
+±stud@vm2:~/myfiles/studies$ # η οι απόλυτες διαδρομές των αρχέιων και τον 
+±stud@vm2:~/myfiles/studies$ # καταλόγων.
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Για παράδειγμα, μπορούμε να εκτελέσουμε την cp 
+±stud@vm2:~/myfiles/studies$ # από τον κατάλογο studies:
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ cp misc/song1.mp3 music/
+±stud@vm2:~/myfiles/studies$ cp misc/song2.mp3 music/
+±stud@vm2:~/myfiles/studies$ cp misc/program1.c programs/
+±stud@vm2:~/myfiles/studies$ cp misc/program2.c programs/
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Ένας ισοδύναμος τρόπος είναι:
+±stud@vm2:~/myfiles/studies$ cp misc/song1.mp3 misc/song2.mp3 music/
+±stud@vm2:~/myfiles/studies$ cp misc/program1.c misc/program2.c programs/
+±stud@vm2:~/myfiles/studies$ rm misc/song1.mp3 misc/song2.mp3 misc/program1.c misc/program2.c
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Τα αρχικά αρχεία και ο κατάλογος misc θα πρέπει 
+±stud@vm2:~/myfiles/studies$ # να διαγραφούν με τις παρακάτω εντολές:
+±stud@vm2:~/myfiles/studies$ rm misc/song1.mp3 
+±stud@vm2:~/myfiles/studies$ rm misc/song2.mp3 
+±stud@vm2:~/myfiles/studies$ rm misc/program1.c 
+±stud@vm2:~/myfiles/studies$ rm misc/program2.c
+±stud@vm2:~/myfiles/studies$ rmdir misc
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # ή εναλλακτικά:
+±stud@vm2:~/myfiles/studies$ rm misc/song1.mp3 misc/song2.mp3 misc/program1.c misc/program2.c
+±stud@vm2:~/myfiles/studies$ rmdir misc
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Στην περίπτωση που χρησιμοποιούσαμε την εντολή 
+±stud@vm2:~/myfiles/studies$ # mv, θα είχαμε ακριβώς την ίδια σύνταξη με την cp,
+±stud@vm2:~/myfiles/studies$ # αλλά δεν θα χρειαζόταν να διαγράψουμε τα αρχικά 
+±stud@vm2:~/myfiles/studies$ # αρχεία. Θα διαγράφαμε μόνο τον κατάλογο misc 
+±stud@vm2:~/myfiles/studies$ # στο τέλος.
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Ένας άλλος τρόπος είναι να μετακινηθούμε στον 
+±stud@vm2:~/myfiles/studies$ # κατάλογο misc και να μεταφέρουμε τα αρχεία 
+±stud@vm2:~/myfiles/studies$ # από εκεί:
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ cd misc
+±stud@vm2:~/myfiles/studies/misc$ mv program1.c program2.c ../programs
+±stud@vm2:~/myfiles/studies/misc$ mv song1.mp3 song2.mp3 ../music
+±stud@vm2:~/myfiles/studies/misc$ cd..
+±stud@vm2:~/myfiles/studies$ rmdir misc
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Υπενθυμίζουμε ότι οι χαρακτήρες .. 
+±stud@vm2:~/myfiles/studies$ # αντιπροσωπεύουν τον πατρικό κατάλογο.
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Τέλος, θα μπορούσαμε να μετακινηθούμε στους 
+±stud@vm2:~/myfiles/studies$ # καταλόγους programs και misc και να μεταφέρουμε 
+±stud@vm2:~/myfiles/studies$ # τα αρχεία από τον κατάλογο misc στο σημείο 
+±stud@vm2:~/myfiles/studies$ # που βρισκόμαστε:
+±stud@vm2:~/myfiles/studies$ cd program
+±stud@vm2:~/myfiles/studies/program$ mv ../misc/program1.c ../misc/program2.c .
+±stud@vm2:~/myfiles/studies/program$ cd ../music
+±stud@vm2:~/myfiles/studies/music$ mv ../misc/song1.mp3 ../misc/song2.mp3 .
+±stud@vm2:~/myfiles/studies/music$ cd..
+±stud@vm2:~/myfiles/studies$ rmdir misc
+±stud@vm2:~/myfiles/studies$ #
+±stud@vm2:~/myfiles/studies$ # Ο χαρακτήρας `.` συμβολίζει το κατάλογο που βρισκόμαστε.

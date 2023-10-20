@@ -77,8 +77,7 @@
 §drwxrwxr-x 4 stud stud 4096 Oct  7 15:43 labs
 §drwxrwxr-x 4 stud stud 4096 Oct  7 15:44 lectures
 §drwxrwxr-x 2 stud stud 4096 Oct 11 09:22 manuals
-§drwxrwxr-x 2 stud stud 4096 Oct 17 14:43 music
-§drwxrwxr-x 2 stud stud 4096 Oct 17 14:42 programs
+§drwxrwxr-x 2 stud stud 4096 Oct 17 14:43 misc
 ±stud@vm2:~/myfiles/studies$ #
 ±stud@vm2:~/myfiles/studies$ # Αν δώσουμε την εντολή tree, μπορούμε να δούμε 
 ±stud@vm2:~/myfiles/studies$ # τη δομή των καταλόγων, από τον κατάλογο studies 

@@ -3,9 +3,10 @@
 ## Περιεχόμενα μαθήματος
 
 - [Απόλυτες και σχετικές διαδρομές καταλόγων](#απόλυτες-και-σχετικές-διαδρομές-καταλόγων)
+- [Δημιουργία, διαγραφή και μετονομασία αρχείων και καταλόγων](#δημιουργία,-διαγραφή-και-μετονομασία-αρχείων-και-καταλόγων)
 
 ## Απόλυτες και σχετικές διαδρομές καταλόγων
-[![asciicast](https://asciinema.org/a/EbyScXzgjqoZNRz92SOQdkWZJ.svg)](https://asciinema.org/a/EbyScXzgjqoZNRz92SOQdkWZJ)
+[![asciicast](https://asciinema.org/a/LpZseHFSmcq2NleNe1TdMux0P.svg)](https://asciinema.org/a/LpZseHFSmcq2NleNe1TdMux0P)
 
 Σε αυτό το μάθημα, θα συζητήσουμε για τις σχετικές και τις απόλυτες διαδρομές των καταλόγων του Linux.
 
@@ -87,8 +88,7 @@ total 20
 drwxrwxr-x 4 stud stud 4096 Oct  7 15:43 labs
 drwxrwxr-x 4 stud stud 4096 Oct  7 15:44 lectures
 drwxrwxr-x 2 stud stud 4096 Oct 11 09:22 manuals
-drwxrwxr-x 2 stud stud 4096 Oct 17 14:43 music
-drwxrwxr-x 2 stud stud 4096 Oct 17 14:42 programs
+drwxrwxr-x 2 stud stud 4096 Oct 17 14:43 misc
 ```
 
 Αν δώσουμε την εντολή `tree`, μπορούμε να δούμε τη δομή των καταλόγων, από τον κατάλογο `studies` και βαθύτερα στο δέντρο.
@@ -170,6 +170,7 @@ stud@vm2:~/myfiles/studies$ cat ../personal/photos/misc/crocodile.txt
 Παρατηρούμε ότι οι σχετικές διαδρομές δεν ξεκινάνε από τον χαρακτήρα `/`. Μια εξαίρεση είναι η διαδρομή `~`, η οποία είναι απόλυτη διαδρομή γιατί ακριβώς αντιπροσωπεύει τον κατάλογο `/home/username` (όπου `username` το όνομα του χρήστη), δηλαδή αντιπροσωπεύει διαδρομή που ξεκινάει από τον κατάλογο `/`.
 
 ## Δημιουργία, διαγραφή και μετονομασία αρχείων και καταλόγων
+[![asciicast](https://asciinema.org/a/FGa7UlL6em1hEJnvyLRagAF4w.svg)](https://asciinema.org/a/FGa7UlL6em1hEJnvyLRagAF4w)
 
 Σε αυτό το μάθημα, θα συνδυάσουμε τις σχετικές και τις απόλυτες διαδρομές με εντολές δημιουργίας, διαγραφής και μετονομασίας αρχείων και καταλόγων.
 
@@ -262,7 +263,7 @@ stud@vm2:~/myfiles/studies$ cp misc/program1.c misc/program2.c programs/
 stud@vm2:~/myfiles/studies$ rm misc/song1.mp3 misc/song2.mp3 misc/program1.c misc/program2.c
 ```
 
-Τα αρχικά αρχεία και ο κατάλογος misc θα πρέπει να διαγραφούν με τις παρακάτω εντολές:
+Τα αρχικά αρχεία και ο κατάλογος `misc` θα πρέπει να διαγραφούν με τις παρακάτω εντολές:
 
 ```console
 stud@vm2:~/myfiles/studies$ rm misc/song1.mp3 

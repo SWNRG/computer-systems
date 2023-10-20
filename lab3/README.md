@@ -168,3 +168,140 @@ stud@vm2:~/myfiles/studies$ cat ../personal/photos/misc/crocodile.txt
 ```
 
 Παρατηρούμε ότι οι σχετικές διαδρομές δεν ξεκινάνε από τον χαρακτήρα `/`. Μια εξαίρεση είναι η διαδρομή `~`, η οποία είναι απόλυτη διαδρομή γιατί ακριβώς αντιπροσωπεύει τον κατάλογο `/home/username` (όπου `username` το όνομα του χρήστη), δηλαδή αντιπροσωπεύει διαδρομή που ξεκινάει από τον κατάλογο `/`.
+
+## Δημιουργία, διαγραφή και μετονομασία αρχείων και καταλόγων
+
+Σε αυτό το μάθημα, θα συνδυάσουμε τις σχετικές και τις απόλυτες διαδρομές με εντολές δημιουργίας, διαγραφής και μετονομασίας αρχείων και καταλόγων.
+
+Συγκεκριμένα, θα μελετήσουμε τις παρακάτω εντολές που αφορούν καταλόγους:
+1) `mkdir` - δημιουργία καταλόγου,
+2) `rmdir` - διαγραφή καταλόγου.
+
+Όπως και τις παρακάτω εντολές που αφορούν κανονικά αρχεία:
+1) `cp` - αντιγραφή αρχείων,
+2) `mv` - μετακίνηση ή μετονομασία αρχείων,
+3) `rm` - διαγραφή αρχείων.
+
+Όλες οι εντολές του Linux που δέχονται σαν όρισμα αρχεία, μπορούν να αναφερθούν σε αυτά τοποθετώντας μια απόλυτη ή σχετική διαδρομή πριν από το όνομα τους. Αυτό έχει σαν αποτέλεσμα να μην χρειάζεται να μετακινηθούμε στον κατάλογο που εμπεριέχει ένα αρχείο, ώστε να αναφερθούμε σε αυτό.
+
+Θα δοκιμάσουμε τις παραπάνω εντολές με ένα παράδειγμα. Μετακινηθείτε στον κατάλογο `personal` ο οποίος βρίσκεται μέσα στον κατάλογο `myfiles`, χρησιμοποιώντας μια απόλυτη διαδρομή και στη συνέχεια εμφανίστε τη δομή καταλόγων με την εντολή `tree`.
+
+```console
+stud@vm2:~$ cd myfiles/studies/
+stud@vm2:~/myfiles/studies$ tree
+.
+├── labs
+│   ├── lab1
+│   │   └── lab_report.txt
+│   └── lab2
+│       └── lab_report.txt
+├── lectures
+│   ├── lecture1
+│   │   └── lecture_notes.txt
+│   └── lecture2
+│       ├── assignments
+│       │   ├── assignment1.txt
+│       │   └── assignment2.txt
+│       └── lecture_notes.txt
+├── manuals
+│   ├── man-cat.txt
+│   └── man-ls.txt
+└── misc
+    ├── program1.c
+    ├── program2.c
+    ├── song1.mp3
+    └── song2.mp3
+
+9 directories, 12 files
+```
+
+Παρατηρούμε ότι ο κατάλογος `misc` θα μπορούσε να αναδιοργανωθεί στους καταλόγους `music` και `programs`.
+
+```
+├── music
+│   ├── song1.mp3
+│   └── song2.mp3
+└── programs
+    ├── program1.c
+    └── program2.c
+
+10 directories, 12 files
+```
+
+Αρχικά, θα πρέπει να δημιουργήσουμε δύο κενούς καταλόγους, τους `music` και `programs` χρησιμοποιώντας την εντολή `mkdir`.
+
+```console
+stud@vm2:~/myfiles/studies$ mkdir music
+stud@vm2:~/myfiles/studies$ mkdir programs
+```
+
+Σημειώνουμε ότι ή εντολή `mkdir` μπορεί να δεχτεί πολλαπλά ορίσματα αρχείων:
+
+```console
+stud@vm2:~/myfiles/studies$ mkdir music programs
+```
+
+Στη συνέχεια, θα πρέπει να μεταφέρουμε τα αρχεία `program1.c` και `program2.c` στον κατάλογο `programs`, όπως και τα αρχεία `song1.mp3` και `song2.mp3` στον κατάλογο `music`.
+
+Η μεταφορά των αρχείων μπορεί να γίνει με τις εντολές `cp` και `mv` (αντιγραφή και διαγραφή αρχείου). Η `cp` μπορεί να εκτελεστεί με διαφορετικούς τρόπους - ανάλογα με τη θέση που βρισκόμαστε, αρκεί να οριστούν σωστά οι σχετικές η οι απόλυτες διαδρομές των αρχέιων και τον καταλόγων.
+
+Για παράδειγμα, μπορούμε να εκτελέσουμε την `cp` από τον κατάλογο studies:
+
+```console
+stud@vm2:~/myfiles/studies$ cp misc/song1.mp3 music/
+stud@vm2:~/myfiles/studies$ cp misc/song2.mp3 music/
+stud@vm2:~/myfiles/studies$ cp misc/program1.c programs/
+stud@vm2:~/myfiles/studies$ cp misc/program2.c programs/
+```
+
+Ένας ισοδύναμος τρόπος είναι:
+
+```console
+stud@vm2:~/myfiles/studies$ cp misc/song1.mp3 misc/song2.mp3 music/
+stud@vm2:~/myfiles/studies$ cp misc/program1.c misc/program2.c programs/
+stud@vm2:~/myfiles/studies$ rm misc/song1.mp3 misc/song2.mp3 misc/program1.c misc/program2.c
+```
+
+Τα αρχικά αρχεία και ο κατάλογος misc θα πρέπει να διαγραφούν με τις παρακάτω εντολές:
+
+```console
+stud@vm2:~/myfiles/studies$ rm misc/song1.mp3 
+stud@vm2:~/myfiles/studies$ rm misc/song2.mp3 
+stud@vm2:~/myfiles/studies$ rm misc/program1.c 
+stud@vm2:~/myfiles/studies$ rm misc/program2.c
+stud@vm2:~/myfiles/studies$ rmdir misc
+```
+
+ή εναλλακτικά:
+
+```console
+stud@vm2:~/myfiles/studies$ rm misc/song1.mp3 misc/song2.mp3 misc/program1.c misc/program2.c
+stud@vm2:~/myfiles/studies$ rmdir misc
+```
+
+Στην περίπτωση που χρησιμοποιούσαμε την εντολή `mv`, θα είχαμε ακριβώς την ίδια σύνταξη με την `cp`, αλλά δεν θα χρειαζόταν να διαγράψουμε τα αρχικά αρχεία. Θα διαγράφαμε μόνο τον κατάλογο `misc` στο τέλος.
+
+Ένας άλλος τρόπος είναι να μετακινηθούμε στον κατάλογο `misc` και να μεταφέρουμε τα αρχεία από εκεί:
+
+```console
+stud@vm2:~/myfiles/studies$ cd misc
+stud@vm2:~/myfiles/studies/misc$ mv program1.c program2.c ../programs
+stud@vm2:~/myfiles/studies/misc$ mv song1.mp3 song2.mp3 ../music
+stud@vm2:~/myfiles/studies/misc$ cd..
+stud@vm2:~/myfiles/studies$ rmdir misc
+```
+
+Υπενθυμίζουμε ότι οι χαρακτήρες `..` αντιπροσωπεύουν τον πατρικό κατάλογο.
+
+Τέλος, θα μπορούσαμε να μετακινηθούμε στους καταλόγους `programs` και `misc` και να μεταφέρουμε τα αρχεία από τον κατάλογο `misc` στο σημείο που βρισκόμαστε:
+
+```console
+stud@vm2:~/myfiles/studies$ cd program
+stud@vm2:~/myfiles/studies/program$ mv ../misc/program1.c ../misc/program2.c .
+stud@vm2:~/myfiles/studies/program$ cd ../music
+stud@vm2:~/myfiles/studies/music$ mv ../misc/song1.mp3 ../misc/song2.mp3 .
+stud@vm2:~/myfiles/studies/music$ cd..
+stud@vm2:~/myfiles/studies$ rmdir misc
+```
+
+Ο χαρακτήρας `.` συμβολίζει το κατάλογο που βρισκόμαστε.

@@ -46,9 +46,9 @@
 ±stud@vm2:~$ # την εκτέλεση της με `ctrl+c`.
 ±stud@vm2:~$ #
 ±stud@vm2:~$ cat
+orange
 §orange
-§orange
-§apple
+apple
 §apple
 §<ctrl+d>
 ±stud@vm2:~$ #
@@ -71,10 +71,10 @@
 ±stud@vm2:~$ # Στην περίπτωση που εκτελέσουμε την sort χωρίς καμία παράμετρο, 
 ±stud@vm2:~$ # θα πρέπει να εισάγουμε το κείμενο από το πληκτρολόγιο.
 ±stud@vm2:~$ sort
-§banana
-§orange
-§apple
-§apricot
+banana
+orange
+apple
+apricot
 §<ctrl+d>
 §apple
 §apricot

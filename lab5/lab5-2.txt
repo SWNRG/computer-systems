@@ -1,0 +1,196 @@
+Για την αναζήτηση του περιεχομένου αρχείων μπορούμε να χρησιμοποιήσουμε τις εντολές `more` ή `less`. Όταν βρισκόμαστε στο περιβάλλον των εντολών αυτών, μπορούμε να πατήσουμε `\keyword`, όπου `keyword` η λέξη που θέλουμε να αναζητήσουμε. Στη συνέχεια, θα μετακινηθεί το κείμενο στα ανάλογα σημεία και θα μαρκαριστεί η λέξη που αναζητούμε. Πατώντας το πλήκτρο `\` όσες φορές επιθυμούμε, επαναλαμβάνουμε την πιο πρόσφατη αναζήτηση μας.
+
+Μια ακόμη χρήσιμη εντολή είναι η `grep`, η οποία επιτρέπει να πραγματοποιούμε αναζητήσεις στο περιεχόμενο αρχείων με τη βοήθεια της γραμμής εντολών.
+
+Για παράδειγμα, η παρακάτω εντολή επιστρέφει όλες τις γραμμές στο αρχέιο `ls-manual` που περιέχουν τη λέξη `list`:
+
+```console
+stud@vm2:~$ grep list ls-manual
+       ls - list directory contents
+              do not list implied . and ..
+              do not list implied entries ending with ~
+       -C     list entries by columns
+              list directories themselves, not their contents
+       -g     like -l, but do not list owner
+              in a long listing, don't print group names
+              follow symbolic links listed on the command line
+              do not list implied entries matching shell  PATTERN  (overridden
+              do not list implied entries matching shell PATTERN
+       -l     use a long listing format
+       -m     fill width with a comma separated list of entries
+              like -l, but list numeric user and group IDs
+       -o     like -l, but do not list group information
+              list subdirectories recursively
+       -U     do not sort; list entries in directory order
+       -x     list entries by lines instead of by columns
+       -1     list one file per line.  Avoid '\n' with -q or -b
+```
+
+Μπορούμε να περικλείουμε τη λέξη αναζήτησης σε εισαγωγικά ή όχι.
+
+Υπάρχει η δυνατότητα να πραγματοποιούμε περισσότερο πολύπλοκες αναζητήσεις με τη χρήση ειδικών εκφράσεων που ονομάζονται regular expressions. Π.χ. το σύμβολο `^` οδηγεί στην αναζήτηση γραμμών που ξεκινούν από τη λέξη που ακολουθεί το σύμβολο. Για παράδειγμα:
+
+```console
+stud@vm2:~$ grep "^GNU" ls-info
+GNU coreutils 8.32               February 2022                           LS(1)
+```
+
+Αυτή η εντολή θα επιστρέψει όλες τις γραμμές του αρχείου `ls-info` που ξεκινούν με "GNU".
+
+Μπορούμε ακόμα να αντιστρέψουμε το αποτέλεσμα της αναζήτησης με την αξοποιήση της παραμέτρου `v`.
+
+```console
+stud@vm2:~$ grep -v "a" ls-info 
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+
+DESCRIPTION
+       fied.
+
+       too.
+
+
+
+
+
+       --block-size=SIZE
+
+              do not list implied entries ending with ~
+
+              otherwise: sort by ctime, newest first
+
+       -C     list entries by columns
+
+       --color[=WHEN]
+
+       -d, --directory
+              list directories themselves, not their contents
+
+       -D, --dired
+
+
+
+       --file-type
+
+
+       --full-time
+              like -l --time-style=full-iso
+
+       -g     like -l, but do not list owner
+
+       --group-directories-first
+              group directories before files;
+
+
+       -G, --no-group
+
+
+       --si   likewise, but use powers of 1000 not 1024
+
+
+
+
+       --hide=PATTERN
+
+       --hyperlink[=WHEN]
+
+
+       -i, --inode
+
+       -I, --ignore=PATTERN
+
+       -k, --kibibytes
+
+
+       -L, --dereference
+              itself
+
+
+       -n, --numeric-uid-gid
+
+
+
+
+
+
+
+       --quoting-style=WORD
+
+       -r, --reverse
+              reverse order while sorting
+
+       -R, --recursive
+              list subdirectories recursively
+
+       -s, --size
+
+
+       --sort=WORD
+              version (-v), extension (-X)
+
+       --time=WORD
+
+              with -l, WORD determines which time to show;  with  --sort=time,
+              sort by WORD (newest first)
+
+       --time-style=TIME_STYLE
+
+       -t     sort by time, newest first; see --time
+
+
+              first
+
+       -U     do not sort; list entries in directory order
+
+
+       -w, --width=COLS
+
+
+
+       -Z, --context
+
+       -1     list one file per line.  Avoid '\n' with -q or -b
+
+
+       --version
+
+       so on.
+
+
+
+       0      if OK,
+
+
+
+AUTHOR
+
+REPORTING BUGS
+
+COPYRIGHT
+
+SEE ALSO
+
+```
+
+Δηλαδή, εμφανίστηκαν όλες οι γραμμές του αρχείου `ls-info` που ΔΕΝ περιέχουν το γράμμα `a`. Υπενθυμίζουμε ότι το linux διαχωρίζει τα κεφαλαία από τα μικρά γράμματα. Δηλαδή, η εντολή επιστρέφει τις γραμμές που περιέχουν το κεφαλαίο γράμμα `A`.
+
+Μπορούμε να αναζητήσουμε μια λέξη και να αναφερθεί και ο αριθμός σειρών που εντοπίστηκαν:
+
+```console
+stud@vm2:~$ grep -n "directory" ls-info
+4:       ls - list directory contents
+10:       List  information  about  the FILEs (the current directory by default).
+46:       -d, --directory
+89:              that points to a directory
+111:              and per directory totals
+183:       -U     do not sort; list entries in directory order
+224:       1      if minor problems (e.g., cannot access subdirectory),
+```
+
+Αυτή η εντολή επιστρέφει όλες τις γραμμές που περιέχουν τη λέξη `directory`, εμφανίζοντας τον αριθμό κάθε γραμμής μαζί με το περιεχόμενο της.
+
+Τα παραπάνω είναι μερικά παραδείγματα χρήσης της εντολής `grep` με βασικές παραμέτρους. Η εντολή `grep` είναι ένα πολύ ισχυρό εργαλείο για αναζήτηση κειμένου σε αρχεία.

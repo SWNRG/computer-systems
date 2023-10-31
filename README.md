@@ -10,7 +10,7 @@
 - [Διάλεξη 5 - Εμφάνιση και αναζήτηση του περιεχομένου αρχείων](lab5)
 
 ## Σχετικές πηγές:
-- [asciinemaze](https://github.com/prenex/asciinemaze), δημιουργεί video τύπου  asciinema.
+- [asciinemaze](https://github.com/swnuom/asciinemaze), δημιουργεί video τύπου  asciinema.
 - ΕΙΣΑΓΩΓΗ ΣΤΑ ΛΕΙΤΟΥΡΓΙΚΑ ΣΥΣΤΗΜΑΤΑ ΚΑΙ ΤΟ UNIX/LINUX, Σιδηρόπουλος Αντώνης, ISBN: 9786182210284, Κωδικός Βιβλίου στον Εύδοξο: 122077484. 
 
 ## Επικοινωνία

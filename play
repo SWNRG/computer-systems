@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# check if a cast name is provided as an argument
+if [ $# -ne 1 ]; then
+  echo "Usage: play <cast_name>"
+  echo ""
+  echo "Available casts:"
+  for cast in /var/casts/*.cast; do
+    cast_name=$(basename "$cast" .cast)
+    description_file="/var/casts/$cast_name.txt"
+    
+    if [ -f "$description_file" ]; then
+      description=$(cat "$description_file")
+      echo "$cast_name - $description"
+    else
+      echo "$cast_name"
+    fi
+  done
+  exit 1
+fi
+
+cast=$1
+
+# check if file exists
+if [ ! -e "/var/casts/$cast.cast" ]; then
+  echo "Video cast $cast does not exist."
+  exit 1
+fi
+
+echo "***************************************************"
+echo "playing video cast $cast - press ctrl + c to cancel"
+echo "***************************************************"
+asciinema play /var/casts/$cast.cast

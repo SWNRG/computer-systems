@@ -1,0 +1,327 @@
+±stud@vm2:~$ # Το μάθημα θα επικεντρωθεί στους βασικούς καταλόγους ενός 
+±stud@vm2:~$ # συστήματος Linux. Το Linux έχει κληρονομήσει μια βασική αρχή 
+±stud@vm2:~$ # των συστημάτων Unix: "στον κόσμο του Unix, τα πάντα είναι αρχεία."
+±stud@vm2:~$ #
+±stud@vm2:~$ # Σύμφωνα με αυτή τη φιλοσοφία, όλες οι δομές και πληροφορίες του 
+±stud@vm2:~$ # συστήματος, ανεξάρτητα από το είδος τους, παρουσιάζονται ως 
+±stud@vm2:~$ # αρχεία. Αυτό σημαίνει ότι τα αρχεία δεδομένων, τα αρχεία 
+±stud@vm2:~$ # εκτέλεσης, οι συσκευές, τα ημερολόγια καταγραφής συμβάντων (logs),
+±stud@vm2:~$ # ακόμη και τα περιφερειακά όπως οι συσκευές εισόδου/εξόδου, 
+±stud@vm2:~$ # όλα αντιμετωπίζονται ως αρχεία. Αυτή η ομοιομορφία στον τρόπο 
+±stud@vm2:~$ # που αντιμετωπίζονται τα παραπάνω οδηγεί σε ένα συνεκτικό σύστημα 
+±stud@vm2:~$ # με διαφάνεια, απλότητα και επαναχρησιμοποίηση του κώδικα.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Στα πλαίσια αυτά, είναι σημαντικό να κατανοήσει κανείς τους 
+±stud@vm2:~$ # βασικούς καταλόγους ενός συστήματος Linux. Οι τελευταίοι 
+±stud@vm2:~$ # ορίζονται σύμφωνα με ένα πρότυπο, το Filesystem Hierarchy 
+±stud@vm2:~$ # Standard (FHS). Το FHS καθορίζει τον τρόπο οργάνωσης και 
+±stud@vm2:~$ # τοποθέτησης των αρχείων στο λειτουργικό σύστημα τύπου Unix, 
+±stud@vm2:~$ # συμπεριλαμβανομένου του Linux. Το FHS προσδιορίζει τη δομή 
+±stud@vm2:~$ # του αρχικού συστήματος αρχείων και τον ρόλο κάθε 
+±stud@vm2:~$ # βασικού καταλόγου.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Ορισμένοι από τους βασικούς καταλόγους στο Linux, σύμφωνα με το FHS, αναλύονται παρακάτω.
+±stud@vm2:~$ #
+±stud@vm2:~$ # 1) Κατάλογος /bin 
+±stud@vm2:~$ # Ο κατάλογος /bin περιέχει τα βασικά εκτελέσιμα αρχεία (binaries) 
+±stud@vm2:~$ # που απαιτούνται για την χρήση του συστήματος. 
+±stud@vm2:~$ # Για παράδειγμα:
+±stud@vm2:~$ ls /bin
+§bash           fuser       networkctl        su
+§bsd-csh        fusermount  nisdomainname     sync
+§bunzip2        getfacl     ntfs-3g           systemctl
+§busybox        grep        ntfs-3g.probe     systemd
+§bzcat          gunzip      ntfs-3g.secaudit  systemd-ask-password
+§bzcmp          gzexe       ntfs-3g.usermap   systemd-escape
+§bzdiff         gzip        ntfscat           systemd-hwdb
+§bzegrep        hciconfig   ntfscluster       systemd-inhibit
+§bzexe          hostname    ntfscmp           systemd-machine-id-setup
+§bzfgrep        ip          ntfsfallocate     systemd-notify
+§bzgrep         journalctl  ntfsfix           systemd-tmpfiles
+§bzip2          kbd_mode    ntfsinfo          systemd-tty-ask-password-agent
+§bzip2recover   kill        ntfsls            tailf
+§bzless         kmod        ntfsmove          tar
+§bzmore         less        ntfstruncate      tempfile
+§cat            lessecho    ntfswipe          touch
+§chacl          lessfile    open              true
+§chgrp          lesskey     openvt            udevadm
+§chmod          lesspipe    pidof             ulockmgr_server
+§chown          ln          ping              umount
+§chvt           loadkeys    ping6             uname
+§cp             login       plymouth          uncompress
+§cpio           loginctl    ps                unicode_start
+§csh            lowntfs-3g  pwd               vdir
+§dash           ls          rbash             wdctl
+§date           lsblk       readlink          which
+§dd             lsmod       red               whiptail
+§df             mkdir       rm                ypdomainname
+§dir            mknod       rmdir             zcat
+§dmesg          mktemp      rnano             zcmp
+§dnsdomainname  more        run-parts         zdiff
+§domainname     mount       sed               zegrep
+§dumpkeys       mountpoint  setfacl           zfgrep
+§echo           mt          setfont           zforce
+§ed             mt-gnu      setupcon          zgrep
+§efibootmgr     mv          sh                zless
+§egrep          nano        sh.distrib        zmore
+§false          nc          sleep             znew
+§fgconsole      nc.openbsd  ss
+§fgrep          netcat      static-sh
+§findmnt        netstat     stty
+±stud@vm2:~$ #
+±stud@vm2:~$ # Παρατηρούμε ότι υπάρχουν αρκετές από τις βασικές εντολές 
+±stud@vm2:~$ # που είδαμε στο μάθημα, όπως οι ls, echo, grep, chmod, κτλ.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Ας δούμε τα δικαιώματα της εντολής ls:
+±stud@vm2:~$ ls -l /bin/ls
+§-rwxr-xr-x 1 root root 126584 Mar  2  2017 /bin/ls
+±stud@vm2:~$ #
+±stud@vm2:~$ # Δηλαδή, η εντολή ls μπορεί να εκτελεστεί από όλους τους χρήστες. 
+±stud@vm2:~$ # Ο διαχειριστής θα μπορούσε με την παρακάτω εντολή να αφαιρέσει 
+±stud@vm2:~$ # το δικαίωμα εκτέλεσης από τους υπόλοιπους χρήστες.
+±stud@vm2:~$ sudo chmod o-x /bin/ls
+±stud@vm2:~$ ls -l /bin/ls
+§-rwxr-xr-- 1 root root 126584 Mar  2  2017 /bin/ls
+±stud@vm2:~$ ls
+§-bash: /bin/ls: Permission denied
+±stud@vm2:~$ #
+±stud@vm2:~$ # Εαν αφαιρεθεί το δικαίωμα εκτέλεσης από τους λοιπούς χρήστες 
+±stud@vm2:~$ # (others), τότε ένας απλός χρήστης δεν μπορεί να εκτελέσει την 
+±stud@vm2:~$ # εντολή ls.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Τέλος, με τον παρακάτω συνδυασμό εντολών μπορούμε να βρούμε 
+±stud@vm2:~$ # όλες τις εντολές του /bin που έχουν τα γράμματα rm 
+±stud@vm2:~$ # στο όνομα τους:
+±stud@vm2:~$ ls /bin | grep rm
+§fusermount
+§ntfs-3g.usermap
+§rm
+§rmdir
+±stud@vm2:~$ #
+±stud@vm2:~$ # Δηλαδή, τέσσερις εντολές του /bin έχουν τους χαρακτήρες rm 
+±stud@vm2:~$ # στο όνομα τους.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Επιπρόσθετες εντολές μπορούν να βρεθούν στους καταλόγους 
+±stud@vm2:~$ # /usr/bin (εντολές χρηστών) και /sbin, /usr/sbin (εντολές 
+±stud@vm2:~$ # για τη διαχείριση του συστήματος).
+±stud@vm2:~$ #
+±stud@vm2:~$ # 2) Κατάλογος /etc 
+±stud@vm2:~$ # Ο κατάλογος /etc περιέχει τις ρυθμίσεις του συστήματος καθώς 
+±stud@vm2:~$ # και των εγκατεστημένων προγραμμάτων. Οι ρυθμίσεις, όπως όλα 
+±stud@vm2:~$ # στο Linux, είναι αρχεία.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Για παράδειγμα, το αρχείο /etc/passwd περιέχει τις 
+±stud@vm2:~$ # παραμέτρους των λογαριασμών των χρηστών. Ας εμφανίσουμε 
+±stud@vm2:~$ # τις παραμέτρους του χρήστη stud:
+±stud@vm2:~$ cat /etc/passwd | grep stud
+§stud:x:1000:1000:student,,,:/home/stud:/bin/bash
+±stud@vm2:~$ #
+±stud@vm2:~$ # Οι παράμετροι περιλαμβάνουν το όνομα του χρήστη (username), 
+±stud@vm2:~$ # μοναδικούς αριθμούς (IDs) για τον χρήστη και την βασική του ομάδα
+±stud@vm2:~$ # (ονομάζονται UID και GID), την περιγραφή του, τον προσωπικό του 
+±stud@vm2:~$ # κατάλογο, την γραμμή εντολών που χρησιμοποιεί (π.χ. bash), κ.α.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Στο παρελθόν, το δεύτερο πεδίο περιλάμβανε τον κρυπτογραφημένο 
+±stud@vm2:~$ # κωδικό του χρήστη. Σήμερα αυτός βρίσκεται στο αρχείο /etc/shadow,
+±stud@vm2:~$ # το περιεχόμενο του οποίου δεν έχουμε δικαίωμα να δούμε ως 
+±stud@vm2:~$ # απλοί χρήστες:
+±stud@vm2:~$ ls -l /etc/shadow
+§-rw-r----- 1 root shadow 255431 Dec  5 11:25 /etc/shadow
+±stud@vm2:~$ #
+±stud@vm2:~$ # 3) Κατάλογος /home
+±stud@vm2:~$ # Ο κατάλογος /home περιλαμβάνει τους προσωπικούς καταλόγους 
+±stud@vm2:~$ # των χρηστών, δηλαδή ο κάθε χρήστης έχει έναν ξεχωριστό 
+±stud@vm2:~$ # υποκατάλογο για τα προσωπικά του αρχεία.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Ας μετρήσουμε τους καταλόγους των χρηστών στο σύστημα:
+±stud@vm2:~$ ls /home | wc -l
+§2003
+±stud@vm2:~$ #
+±stud@vm2:~$ # Τώρα ας δούμε τα δικαιώματα πρόσβασης στον προσωπικό κατάλογο 
+±stud@vm2:~$ # του χρήστη stud:
+±stud@vm2:~$ ls -al /home | grep stud
+§drwxr-----   33 stud         stud          4096 Dec  7 16:35 stud
+±stud@vm2:~$ #
+±stud@vm2:~$ # Δηλαδή, μόνο ο χρήστης stud μπορεί να μπεί στον συγκεκριμένο 
+±stud@vm2:~$ # κατάλογο και να δει ή να επεξεργαστεί τα αρχεία του.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Υπενθυμίζουμε ότι ο χαρακτήρας ~ συμβολίζει τον προσωπικό 
+±stud@vm2:~$ # κατάλογο του ενεργού χρήστη.
+±stud@vm2:~$ echo ~
+§/home/stud
+±stud@vm2:~$ #
+±stud@vm2:~$ # 4) Κατάλογοι /lib και /usr/lib
+±stud@vm2:~$ # Ο κατάλογος /lib περιέχει τις βιβλιοθήκες (libraries) που 
+±stud@vm2:~$ # απαιτούνται από τα εκτελέσιμα αρχεία στους καταλόγους /bin 
+±stud@vm2:~$ # και /sbin, ενώ ο /usr/lib περιλαμβάνει γενικότερης χρήσης 
+±stud@vm2:~$ # βιβλιοθήκες. 
+±stud@vm2:~$ #
+±stud@vm2:~$ # Για παράδειγμα, στον κατάλογο /lib μπορούμε να βρούμε τις 
+±stud@vm2:~$ # προεκτάσεις του πυρήνα (modules). Αποτελούν αυτόνομα υποσυστήματα 
+±stud@vm2:~$ # που μπορούν να ενεργοποιηθούν (ή να απενεργοποιηθούν) 
+±stud@vm2:~$ # προσθέτοντας λειτουργικότητα στον πυρήνα, χωρίς επανεκκίνηση 
+±stud@vm2:~$ # του υπολογιστή.
+±stud@vm2:~$ ls /lib/modules/4.15.0-142-generic/kernel
+§arch   crypto   fs      lib  net    spl     virt       zfs
+§block  drivers  kernel  mm   sound  ubuntu  wireguard
+±stud@vm2:~$ #
+±stud@vm2:~$ # 5) Κατάλογος /dev
+±stud@vm2:~$ # Ο κατάλογος /dev περιέχει τα αρχεία που αντιπροσωπεύουν 
+±stud@vm2:~$ # τις συσκευές στο σύστημα, όπως σκληροί δίσκοι, πληκτρολόγια, 
+±stud@vm2:~$ # και άλλες συσκευές. Τα αρχεία αυτά είναι εικονικά. 
+±stud@vm2:~$ #
+±stud@vm2:~$ # Για παράδειγμα, το αρχείο /dev/null αγνοεί ότι πληροφορία του 
+±stud@vm2:~$ # στέλνεται. Μπορούμε να χρησιμοποιήσουμε αυτή τη συσκευή για να 
+±stud@vm2:~$ # απορρίψουμε την έξοδο μιας εντολής:
+±stud@vm2:~$ ls > /dev/null
+±stud@vm2:~$ 
+±stud@vm2:~$ #
+±stud@vm2:~$ # Η συσκευή /dev/zero παράγει μηδενικά, ενώ οι συσκευές 
+±stud@vm2:~$ # /dev/random και /dev/urandom παράγουν ψευδοτυχαίους αριθμούς 
+±stud@vm2:~$ # (με υψηλή και χαμηλότερη εντροπία, αντίστοιχα).
+±stud@vm2:~$ #
+±stud@vm2:~$ # Για παράδειγμα, η παρακάτω εντολή παράγει 8 τυχαίους χαρακτήρες:
+±stud@vm2:~$ head -c 8 /dev/random
+§Qt�l�D3"
+±stud@vm2:~$ #
+±stud@vm2:~$ # Άλλα αρχεία αντιπροσωπεύουν φυσικές συσκευές, όπως σκληρούς 
+±stud@vm2:~$ # δίσκους (π.χ. /dev/sda, /dev/sdb), τερματικά (π.χ. φυσικά 
+±stud@vm2:~$ # τερματικά - /dev/ttyX ή ψευδοτερματικά - /dev/pts/X, όπου X 
+±stud@vm2:~$ # ο αριθμός του τερματικού), οπτικά μέσα αποθήκευσης (π.χ. 
+±stud@vm2:~$ # /dev/cdrom και /dev/dvd), κ.α.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Μπορούμε να βρούμε το ψευδοτερματικό του χρήστη stud:
+±stud@vm2:~$ ls -al /dev/pts | grep stud
+§crw--w----  1 stud tty  136, 0 Dec 12 09:45 0
+±stud@vm2:~$ echo "hello" > /dev/pts/0
+§hello
+±stud@vm2:~$ #
+±stud@vm2:~$ # Δηλαδή μόνο ο ίδιος ο χρήστης και τα μέλη της ομάδας tty μπορούν 
+±stud@vm2:~$ # να γράψουν στην οθόνη του stud.
+±stud@vm2:~$ #
+±stud@vm2:~$ # 6) Κατάλογοι /mnt, /media και /cdrom
+±stud@vm2:~$ # Χρησιμοποιoύνται για την προσωρινή προσάρτηση (mounting) 
+±stud@vm2:~$ # εξωτερικών συσκευών ή συστημάτων αρχείων. Για παράδειγμα, 
+±stud@vm2:~$ # με την εντολή:
+±stud@vm2:~$ sudo mount /dev/cdrom /cdrom
+±stud@vm2:~$ #
+±stud@vm2:~$ # Τα αρχεία του CDROM εμφανίζονται στον κατάλογο /cdrom. 
+±stud@vm2:~$ # Η εντολή mount απαιτεί δικαιώματα διαχειριστή.
+±stud@vm2:~$ #
+±stud@vm2:~$ # 7) Κατάλογος /usr
+§Περιέχει τις εφαρμογές, τις βιβλιοθήκες και τα αρχεία δεδομένων για τους 
+±stud@vm2:~$ # χρήστες.
+±stud@vm2:~$ #
+±stud@vm2:~$ # 8) Κατάλογος /var
+±stud@vm2:~$ # Περιέχει μεταβαλλόμενα αρχεία, όπως ημερολόγια του συστήματος 
+±stud@vm2:~$ # (logs), προσωρινά αρχεία (κατάλογος /var/tmp) ή αρχεία που 
+±stud@vm2:~$ # αντιπροσωπεύουν εργασίες που αναμένουν εκτέλεση, όπως οι 
+±stud@vm2:~$ # εκτυπώσεις (κατάλογος `/var/spool`).
+±stud@vm2:~$ #
+±stud@vm2:~$ # Για παράδειγμα, το αρχείο /var/log/auth.log καταγράφει γεγονότα 
+±stud@vm2:~$ # που σχετίζονται με την επαλήθευση της ταυτότητας χρηστών:
+±stud@vm2:/var/log$ tail -1 auth.log
+§Dec 12 09:51:39 vm2 sshd[16757]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.92.0.123  user=root
+±stud@vm2:~$ #
+±stud@vm2:~$ # Δηλαδή, η τελευταία εγγραφή του αρχείου εντόπισε αποτυχημένη 
+±stud@vm2:~$ # είσοδο στο σύστημα με τον λογαριασμό του διαχειριστή.
+±stud@vm2:~$ #
+±stud@vm2:~$ # 9) Κατάλογος /tmp
+±stud@vm2:~$ # Χρησιμοποιείται για την αποθήκευση προσωρινών αρχείων από 
+±stud@vm2:~$ # εφαρμογές και χρήστες. Το περιεχόμενο αυτού του καταλόγου 
+±stud@vm2:~$ # διαγράφεται κατά την επανεκκίνηση. Έχει ένα ειδικό καθεστώς 
+±stud@vm2:~$ # στο σύστημα (που ορίζεται με το δικαίωμα t), όπου όλοι οι 
+±stud@vm2:~$ # χρήστες μπορούν να δημιουργήσουν εκεί αρχεία, αλλά κανένας 
+±stud@vm2:~$ # δεν μπορεί να διαγράψει αρχεία άλλου χρήστη:
+±stud@vm2:~$ ls -al / | grep tmp
+§drwxrwxrwt    8 root     root      4096 Dec 12 09:30 tmp
+±stud@vm2:~$ #
+±stud@vm2:~$ # 10) Κατάλογος /proc
+±stud@vm2:~$ # Ο κατάλογος /proc στο Linux παρέχει πρόσβαση σε πληροφορίες 
+±stud@vm2:~$ # και ρυθμίσεις του πυρήνα του λειτουργικού συστήματος. Προσέξτε 
+±stud@vm2:~$ # ότι η πλειονότητα των ρυθμίσεων συστήματος γίνεται μέσω των 
+±stud@vm2:~$ # αρχείων ρυθμίσεων, των εργαλείων διαχείρισης συστήματος 
+±stud@vm2:~$ # ή των εντολών γραμμής εντολών, και όχι απευθείας μέσα από 
+±stud@vm2:~$ # τον κατάλογο /proc.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Συγκεκριμένα, ο υποκατάλογος /proc/sys/ παρέχει πρόσβαση 
+±stud@vm2:~$ # σε διάφορες παραμέτρους και ρυθμίσεις του πυρήνα του Linux, 
+±stud@vm2:~$ # όπως οι ρυθμίσεις δικτύου, η διαχείριση μνήμης κ.ά.
+±stud@vm2:~$ ls /proc/sys
+§abi  debug  dev  fs  kernel  net  user  vm  xen
+±stud@vm2:~$ #
+±stud@vm2:~$ # Για παράδειγμα, ένας χρήστης θα μπορούσε να διαβάσει το όνομα 
+±stud@vm2:~$ # του υπολογιστή (hostname).
+±stud@vm2:~$ cat /proc/sys/kernel/hostname
+§vm2
+±stud@vm2:~$ ls -al /proc/sys/kernel/hostname 
+§-rw-r--r-- 1 root root 0 Dec  1 14:41 /proc/sys/kernel/hostname
+±stud@vm2:~$ #
+±stud@vm2:~$ # Η εντολή echo "new_hostname" > /proc/sys/kernel/hostname μπορεί 
+±stud@vm2:~$ # να αλλάξει το όνομα του υπολογιστή εαν εκτελεστεί από τον 
+±stud@vm2:~$ # διαχειριστή. Σημειώστε ότι αυτό δεν θα είναι μόνιμο και θα 
+±stud@vm2:~$ # ισχύει μόνο για τη διάρκεια της τρέχουσας συνεδρίας.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Άλλα παραδείγματα είναι τα αρχεία /proc/cpuinfo και 
+±stud@vm2:~$ # /proc/meminfo που εμφανίζουν πληροφορίες για τον επεξεργαστή 
+±stud@vm2:~$ # ή την μνήμη.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Δηλαδή, η παρακάτω εντολή εμφανίζει την τρέχουσα διαθέσιμη 
+±stud@vm2:~$ # μνήμη, η οποία αλλάζει δυναμικά.
+±stud@vm2:~$ cat /proc/meminfo | grep MemFree
+§MemFree:          912068 kB
+±stud@vm2:~$ cat /proc/meminfo | grep MemFree
+§MemFree:          912332 kB
+±stud@vm2:~$ #
+±stud@vm2:~$ # Το αρχείο /proc/filesystems εμφανίζει τα συστήματα αρχείων 
+±stud@vm2:~$ # (filesystems) που υποστηρίζονται από τον πυρήνα του Linux:
+±stud@vm2:~$ cat /proc/filesystems
+§nodev	sysfs
+§nodev	rootfs
+§nodev	ramfs
+§nodev	bdev
+§nodev	proc
+§nodev	cpuset
+§nodev	cgroup
+§nodev	cgroup2
+§nodev	tmpfs
+§nodev	devtmpfs
+§nodev	configfs
+§nodev	debugfs
+§nodev	tracefs
+§nodev	securityfs
+§nodev	sockfs
+§nodev	dax
+§nodev	bpf
+§nodev	pipefs
+§nodev	hugetlbfs
+§nodev	devpts
+§	ext3
+§	ext2
+§	ext4
+§	squashfs
+§	vfat
+§nodev	ecryptfs
+§	fuseblk
+§nodev	fuse
+§nodev	fusectl
+§nodev	pstore
+§nodev	mqueue
+§nodev	autofs
+§nodev	xenfs
+§nodev	binfmt_misc
+±stud@vm2:~$ #
+±stud@vm2:~$ # Το αρχείο /proc/loadavg παρέχει πληροφορίες σχετικά με το 
+±stud@vm2:~$ # φορτίο του συστήματος, συμπεριλαμβανομένων των μέσων φορτίων 
+±stud@vm2:~$ # για τα τελευταία 1, 5 και 15 λεπτά.
+±stud@vm2:~$ cat /proc/loadavg
+§0.00 0.00 0.00 1/159 19840
+±stud@vm2:~$ #
+±stud@vm2:~$ # Τέλος, στον κατάλογο /proc διατηρείται υποκατάλογος του 
+±stud@vm2:~$ # τύπου /proc/[PID]/ για κάθε πρόγραμμα που τρέχει στο σύστημα 
+±stud@vm2:~$ # (ονομάζεται διεργασία και το [PID] είναι ο αριθμός αναγνώρισης 
+±stud@vm2:~$ # της διεργασίας). Παρέχει πληροφορίες όπως η κατάσταση της 
+±stud@vm2:~$ # διεργασίας, η κατανάλωση μνήμης κ.ά.
+±stud@vm2:~$ #
+±stud@vm2:~$ # Δηλαδή, όπως και στην περίπτωση του καταλόγου /dev, τα αρχεία 
+±stud@vm2:~$ # του καταλόγου /proc είναι εικονικά.

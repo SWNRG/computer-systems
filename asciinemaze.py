@@ -37,15 +37,21 @@ def main(argv):
         t=0
         skipdelays = False     # flag to skip delays for the current line
         promptperiod = False   # keep track the part of text that is a shell prompt
+        clsline = False # enable in the case of a single cls character
+
         for line in open(argv[0]):
             prev=' ' # Rem.: For leading tabulation spaces!
 
             skipprintingchar = False
 
             # Check if the line starts with the skipline character
-            if line.startswith(skiplinechar) or line.startswith(clschar):
+            if line.startswith(skiplinechar):
                 skipdelays = True
                 skipprintingchar = True
+            elif line.startswith(clschar):
+                skipdelays = True
+                skipprintingchar = True
+                clsline = True
             elif line.startswith(skippromptchar):
                 skipdelays = True
                 promptperiod = True
@@ -83,8 +89,11 @@ def main(argv):
                 elif (c == '\n'):
                     # Rem.: Endl is used by the file format this way!!!
                     # skip end of line, in the case of clear or delay chars
-                    if (prev != clschar) and (prev != delaychar):
+                    if (clsline == False) and (prev != delaychar):
                         sys.stdout.write('\\r\\n')
+                    else:
+                        clsline = False
+
                 elif (c == '"'):
                     sys.stdout.write('\\"')
                 elif (c == '\\'):
@@ -102,7 +111,7 @@ def main(argv):
                         sys.stdout.write (' ')
                         skipdelays = False
                         promptperiod = False
-                    elif (c == clschar):
+                    elif ((c == clschar) and (clsline)):
                         sys.stdout.write (clsansi+cursorhomeansi)
                     elif skipprintingchar:
                         # do not print control characters
